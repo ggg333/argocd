@@ -7,7 +7,10 @@ metadata:
   name: nignx
 spec:
   containers:
-  - image: nginx
+  - env:
+    - name: POD_NAMESPACE
+      value: default
+    image: nginx
     name: nignx
     resources: {}
   dnsPolicy: ClusterFirst
